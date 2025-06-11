@@ -19,7 +19,7 @@ class CorePluginManager:
         """
         import plugins
         for _, modname, ispkg in pkgutil.iter_modules(plugins.__path__):
-            if not ispkg and not modname.startswith("__"):
+            if not ispkg and not modname.startswith("__") and not modname.endswith(".ts"):
                 try:
                     module = importlib.import_module(f"plugins.{modname}")
                     for attr in dir(module):

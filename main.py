@@ -8,10 +8,10 @@ from config.settings import settings
 from cli.main import main as cli_main
 from gui.main import main as gui_main
 
-def run_gui():
+def run_gui(app_context):
     gui_main()
 
-def run_cli():
+def run_cli(app_context):
     cli_main()
 
 def ask_mode():
@@ -72,9 +72,9 @@ def main():
         if mode is not None:
             mode = mode.lower()
     if mode == "gui":
-        run_gui()
+        run_gui(app_context)
     elif mode == "cli":
-        run_cli()
+        run_cli(app_context)
     else:
         print("Por favor, elige 'gui' o 'cli'.")
 
