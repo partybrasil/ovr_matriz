@@ -1,0 +1,11 @@
+pyside6
+rich
+pytest
+pluggy
+pywin32
+paramiko
+smbprotocol
+webdavclient3
+vncdotool
+pybluez
+python-nmap
