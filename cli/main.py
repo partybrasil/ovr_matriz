@@ -1,4 +1,6 @@
 from core.plugin_manager import CorePluginManager
+from cli.connection_selector import select_connection_type
+from cli.adapter_verifier import verify_adapters
 
 def cli_plugin_manager(app_context):
     plugin_manager = CorePluginManager(app_context)
@@ -29,3 +31,22 @@ def main_menu(app_context):
     if choice == "3":
         cli_plugin_manager(app_context)
     # ...existing code...
+
+def main():
+    print("Bienvenido al Gestor de Conexiones CLI")
+    while True:
+        print("\n1. Seleccionar tipo de conexión")
+        print("2. Verificar adaptadores de red")
+        print("3. Salir")
+        opt = input("Opción: ")
+        if opt == "1":
+            select_connection_type()
+        elif opt == "2":
+            verify_adapters()
+        elif opt == "3":
+            break
+        else:
+            print("Opción no válida.")
+
+if __name__ == "__main__":
+    main()
