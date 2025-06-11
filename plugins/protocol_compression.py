@@ -9,9 +9,9 @@ class CompressionPlugin(BasePlugin):
         self.app_context = app_context
 
     def compress(self, data):
-        logger.info("[Compression] Placeholder: comprimir datos.")
-        return data
+        logger.info("[Compression] Placeholder: comprimiendo datos.")
+        # Aquí deberías implementar la lógica real usando zlib, lz4, etc.
 
     def decompress(self, data):
-        logger.info("[Compression] Placeholder: descomprimir datos.")
-        return data
+        logger.info("[Compression] Placeholder: descomprimiendo datos.")
+        # Aquí deberías implementar la lógica real usando zlib, lz4, etc.

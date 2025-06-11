@@ -10,3 +10,4 @@ class NvgrePlugin(BasePlugin):
 
     def create_tunnel(self, vni, remote_ip):
         logger.info(f"[NVGRE] Placeholder: crear túnel NVGRE VNI={vni} a {remote_ip}.")
+        # Aquí deberías implementar la lógica real para crear un túnel NVGRE.

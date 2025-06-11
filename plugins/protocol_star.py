@@ -10,3 +10,8 @@ class StarPlugin(BasePlugin):
 
     def join_star(self, hub_ip):
         logger.info(f"[Star] Placeholder: unir a hub central {hub_ip}.")
+        # Aquí deberías implementar la lógica real para unirse a un hub central.
+
+    def join(self, hub_id):
+        logger.info(f"[Star] Placeholder: unir a hub central {hub_id}.")
+        # Aquí deberías implementar la lógica real para unirse a un hub central.

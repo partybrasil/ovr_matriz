@@ -10,3 +10,4 @@ class TurnPlugin(BasePlugin):
 
     def relay(self, data):
         logger.info("[TURN] Placeholder: retransmitiendo datos a través de TURN.")
+        # Aquí deberías implementar la lógica real usando una librería TURN o sockets.

@@ -8,5 +8,6 @@ class RawSocketPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def send_packet(self, packet):
-        logger.info("[RawSocket] Placeholder: enviar paquete raw.")
+    def send_packet(self, interface, packet):
+        logger.info(f"[RawSocket] Placeholder: enviar paquete raw en {interface}.")
+        # Aquí deberías implementar la lógica real usando sockets raw.

@@ -10,3 +10,4 @@ class DtlsPlugin(BasePlugin):
 
     def secure_connection(self, connection):
         logger.info("[DTLS] Placeholder: asegurar conexión UDP con DTLS.")
+        # Aquí deberías implementar la lógica real usando una librería DTLS como DtlsSocket.

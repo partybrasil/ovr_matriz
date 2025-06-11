@@ -10,4 +10,8 @@ class StunPlugin(BasePlugin):
 
     def get_public_ip(self):
         logger.info("[STUN] Placeholder: obtener IP pública y tipo de NAT.")
+        # Aquí deberías implementar la lógica real usando una librería STUN como pystun3.
+        # Ejemplo:
+        # import stun
+        # nat_type, external_ip, external_port = stun.get_ip_info()
         return "0.0.0.0", "unknown"

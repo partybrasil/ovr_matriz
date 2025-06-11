@@ -8,5 +8,6 @@ class EoipPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def create_tunnel(self, remote_ip):
-        logger.info(f"[EoIP] Placeholder: crear túnel Ethernet-over-IP a {remote_ip}.")
+    def create_tunnel(self, tunnel_id, remote_ip):
+        logger.info(f"[EoIP] Placeholder: crear túnel Ethernet-over-IP ID={tunnel_id} a {remote_ip}.")
+        # Aquí deberías implementar la lógica real para crear un túnel EoIP.

@@ -8,6 +8,6 @@ class InvitePlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def generate_code(self):
-        logger.info("[Invite] Placeholder: generar código de invitación.")
-        return "INVITE-CODE"
+    def generate_code(self, session_id):
+        logger.info(f"[Invite] Placeholder: generar código de invitación para sesión {session_id}.")
+        # Aquí deberías implementar la lógica real para generar códigos de invitación.

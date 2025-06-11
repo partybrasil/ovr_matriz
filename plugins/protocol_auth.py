@@ -8,6 +8,6 @@ class AuthPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def authenticate(self, user, password):
-        logger.info("[Auth] Placeholder: autenticación de usuario.")
-        return True
+    def authenticate(self, username, password):
+        logger.info("[Auth] Placeholder: autenticando usuario.")
+        # Aquí deberías implementar la lógica real de autenticación.

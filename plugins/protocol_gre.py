@@ -11,6 +11,8 @@ class GrePlugin(BasePlugin):
 
     def connect(self, remote_ip):
         logger.info(f"[GRE] Placeholder: conectar túnel GRE a {remote_ip}.")
+        # Aquí deberías implementar la lógica real para crear un túnel GRE.
+        # Ejemplo: usar 'ip tunnel add' en Linux o herramientas equivalentes.
         self.connected = True
 
     def disconnect(self):

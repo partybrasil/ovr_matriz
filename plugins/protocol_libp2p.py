@@ -10,3 +10,7 @@ class Libp2pPlugin(BasePlugin):
 
     def connect(self, peer_id):
         logger.info(f"[libp2p] Placeholder: conectar a peer {peer_id}.")
+
+    def connect_peer(self, peer_id, address):
+        logger.info(f"[libp2p] Placeholder: conectar a peer {peer_id} en {address}.")
+        # Aquí deberías implementar la lógica real usando py-libp2p.

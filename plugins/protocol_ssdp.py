@@ -10,3 +10,4 @@ class SsdpPlugin(BasePlugin):
 
     def discover(self):
         logger.info("[SSDP] Placeholder: descubrimiento de dispositivos SSDP.")
+        # Aquí deberías implementar la lógica real usando una librería SSDP como pyupnp.

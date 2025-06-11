@@ -11,6 +11,7 @@ class SoftEtherPlugin(BasePlugin):
 
     def connect(self, config):
         logger.info("[SoftEther] Placeholder: conectar usando configuración SoftEther.")
+        # Aquí deberías implementar la lógica real usando la API de SoftEther o comandos de línea.
         self.connected = True
 
     def disconnect(self):

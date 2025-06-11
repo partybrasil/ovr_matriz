@@ -8,10 +8,10 @@ class LibsodiumPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def encrypt(self, data):
-        logger.info("[Libsodium] Placeholder: cifrar datos.")
-        return data
+    def encrypt(self, data, key):
+        logger.info("[Libsodium] Placeholder: cifrando datos.")
+        # Aquí deberías implementar la lógica real usando libsodium.
 
-    def decrypt(self, data):
-        logger.info("[Libsodium] Placeholder: descifrar datos.")
-        return data
+    def decrypt(self, data, key):
+        logger.info("[Libsodium] Placeholder: descifrando datos.")
+        # Aquí deberías implementar la lógica real usando libsodium.

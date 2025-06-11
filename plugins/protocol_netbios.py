@@ -10,3 +10,4 @@ class NetbiosPlugin(BasePlugin):
 
     def discover(self):
         logger.info("[NetBIOS] Placeholder: descubrimiento de nombres NetBIOS.")
+        # Aquí deberías implementar la lógica real usando nmblookup o una librería NetBIOS.

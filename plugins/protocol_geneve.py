@@ -10,3 +10,4 @@ class GenevePlugin(BasePlugin):
 
     def create_tunnel(self, vni, remote_ip):
         logger.info(f"[GENEVE] Placeholder: crear túnel GENEVE VNI={vni} a {remote_ip}.")
+        # Aquí deberías implementar la lógica real usando 'ip link add geneve...' en Linux.

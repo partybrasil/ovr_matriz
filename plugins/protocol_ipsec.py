@@ -11,6 +11,8 @@ class IpSecPlugin(BasePlugin):
 
     def connect(self, config):
         logger.info("[IPSec] Placeholder: conectar usando configuración IPSec.")
+        # Aquí deberías implementar la lógica real para establecer una conexión IPSec.
+        # Ejemplo: usar strongSwan, libreswan, o comandos del sistema para configurar IPSec.
         self.connected = True
 
     def disconnect(self):

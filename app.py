@@ -1,5 +1,3 @@
-# ELIMINAR ESTE ARCHIVO - La entrada principal es main.py y la gestión de plugins está centralizada.
-
 from plugins.plugin_manager import PluginManager
 from plugins.directplay_plugin import DirectPlayPlugin
 import psutil
@@ -33,13 +31,22 @@ def show_adapters():
 
 def create_virtual_adapter(name=None, protocol="Ethernet", fake_mac=None, properties=None):
     # Placeholder: La creación real depende del SO y requiere privilegios de administrador
+    # Ejemplo de implementación real (comentada):
+    #   - En Windows: usar netsh o PowerShell para crear adaptador TAP o Loopback.
+    #   - En Linux: usar ip tuntap add, ip link, etc.
+    #   - En macOS: usar ifconfig para crear interfaces virtuales.
+    # Aquí deberías invocar comandos del sistema para crear el adaptador real.
+    # Por ejemplo:
+    # import subprocess
+    # subprocess.run(["ip", "tuntap", "add", "dev", name, "mode", "tun"])
+    # subprocess.run(["ip", "link", "set", name, "up"])
+    # subprocess.run(["ip", "link", "set", name, "address", fake_mac])
     if not name:
         name = f"VirtualAdapter_{uuid.uuid4().hex[:6]}"
     if not fake_mac:
         fake_mac = "02:00:%02x:%02x:%02x:%02x" % tuple(random.randint(0, 255) for _ in range(4))
     # Simulación de creación
     console.print(f"[bold green]Adaptador virtual '{name}' creado con MAC {fake_mac} y protocolo {protocol}.[/bold green]")
-    # Aquí deberías invocar comandos del sistema para crear el adaptador real
     return name
 
 def select_adapter_interactive():

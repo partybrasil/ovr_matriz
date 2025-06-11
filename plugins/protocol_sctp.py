@@ -10,3 +10,4 @@ class SctpPlugin(BasePlugin):
 
     def connect(self, host, port):
         logger.info(f"[SCTP] Placeholder: conectar a {host}:{port} usando SCTP.")
+        # Aquí deberías implementar la lógica real usando pysctp o sockets SCTP.

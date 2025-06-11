@@ -8,5 +8,6 @@ class UpnpPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def open_port(self, port):
-        logger.info(f"[UPnP] Placeholder: abrir puerto {port} en el router.")
+    def open_port(self, port, protocol="TCP"):
+        logger.info(f"[UPnP] Placeholder: abrir puerto {port}/{protocol} en el router.")
+        # Aquí deberías implementar la lógica real usando miniupnpc o similar.

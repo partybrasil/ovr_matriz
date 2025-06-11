@@ -8,5 +8,6 @@ class QosPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def set_priority(self, traffic_type, priority):
-        logger.info(f"[QoS] Placeholder: establecer prioridad {priority} para {traffic_type}.")
+    def set_priority(self, interface, priority):
+        logger.info(f"[QoS] Placeholder: establecer prioridad {priority} en {interface}.")
+        # Aquí deberías implementar la lógica real para QoS.

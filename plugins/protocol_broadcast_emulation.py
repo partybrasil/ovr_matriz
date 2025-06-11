@@ -8,5 +8,6 @@ class BroadcastEmulationPlugin(BasePlugin):
     def initialize(self, app_context):
         self.app_context = app_context
 
-    def emulate(self):
-        logger.info("[BroadcastEmulation] Placeholder: emular broadcast LAN.")
+    def emulate(self, data):
+        logger.info("[BroadcastEmulation] Placeholder: emulando broadcast LAN.")
+        # Aquí deberías implementar la lógica real para emular broadcast LAN.

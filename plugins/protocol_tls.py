@@ -10,3 +10,4 @@ class TlsPlugin(BasePlugin):
 
     def secure_connection(self, connection):
         logger.info("[TLS] Placeholder: asegurar conexión con TLS.")
+        # Aquí deberías implementar la lógica real usando ssl.wrap_socket o una librería TLS.

@@ -10,3 +10,4 @@ class QuicPlugin(BasePlugin):
 
     def connect(self, host, port):
         logger.info(f"[QUIC] Placeholder: conectar a {host}:{port} usando QUIC.")
+        # Aquí deberías implementar la lógica real usando aioquic o una librería QUIC.

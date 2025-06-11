@@ -11,6 +11,8 @@ class L2tpPlugin(BasePlugin):
 
     def connect(self, config):
         logger.info("[L2TP] Placeholder: conectar usando configuración L2TP.")
+        # Aquí deberías implementar la lógica real para establecer una conexión L2TP.
+        # Ejemplo: usar xl2tpd, libreswan, o comandos del sistema.
         self.connected = True
 
     def disconnect(self):

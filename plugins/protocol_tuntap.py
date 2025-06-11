@@ -10,3 +10,4 @@ class TunTapPlugin(BasePlugin):
 
     def create_interface(self, name):
         logger.info(f"[TUN/TAP] Placeholder: crear interfaz virtual {name}.")
+        # Aquí deberías implementar la lógica real usando pyroute2 o comandos del sistema.

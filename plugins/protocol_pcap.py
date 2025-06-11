@@ -10,3 +10,4 @@ class PcapPlugin(BasePlugin):
 
     def capture(self, interface):
         logger.info(f"[Pcap] Placeholder: capturando paquetes en {interface}.")
+        # Aquí deberías implementar la lógica real usando pcapy, scapy, o pyshark.

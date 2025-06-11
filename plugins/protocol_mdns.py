@@ -10,3 +10,4 @@ class MdnsPlugin(BasePlugin):
 
     def discover(self):
         logger.info("[mDNS] Placeholder: descubrimiento de servicios en red local.")
+        # Aquí deberías implementar la lógica real usando zeroconf o python-zeroconf.

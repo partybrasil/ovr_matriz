@@ -10,3 +10,4 @@ class IcePlugin(BasePlugin):
 
     def negotiate(self):
         logger.info("[ICE] Placeholder: negociación ICE.")
+        # Aquí deberías implementar la lógica real usando una librería ICE como aiortc o py-webrtcvad.

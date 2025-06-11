@@ -29,6 +29,8 @@ class DirectPlayPlugin(BasePlugin):
             logger.warning("[DirectPlay] No permission to use DirectPlay.")
             return False
         # Lógica real de conexión DirectPlay (placeholder)
+        # Aquí deberías implementar la lógica real usando pywin32 o ctypes para acceder a DirectPlay en Windows.
+        # Por ejemplo, podrías usar la API COM de DirectPlay si está disponible.
         self.connected = True
         logger.info(f"[DirectPlay] Conectado a {host}:{port} (simulado)")
         return True
