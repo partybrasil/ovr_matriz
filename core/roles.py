@@ -85,12 +85,31 @@ USERS = {}
 
 def load_users():
     global USERS
+    # Inicializar con admin y user por defecto si el archivo no existe o está vacío
+    default_users = {
+        "admin": {
+            "role": "admin",
+            "permissions": get_permissions("admin")
+        },
+        "user": {
+            "role": "user",
+            "permissions": get_permissions("user")
+        }
+    }
     if os.path.exists(USERS_FILE):
         try:
             with open(USERS_FILE, "r", encoding="utf-8") as f:
-                USERS.update(json.load(f))
+                data = json.load(f)
+                if not data:
+                    USERS.update(default_users)
+                else:
+                    USERS.update(data)
         except Exception as e:
             logging.getLogger("ovr_matriz").error(f"[roles] Error cargando usuarios: {e}")
+            USERS.update(default_users)
+    else:
+        USERS.update(default_users)
+        save_users()
 
 def save_users():
     try:
@@ -102,13 +121,14 @@ def save_users():
 def create_user(username, role, custom_permissions=None, operator=None):
     """
     Crea un usuario nuevo con rol y permisos personalizados.
-    Si custom_permissions es None, se asignan los permisos por defecto del rol.
+    Si custom_permissions es None, se asignan los permisos mínimos del rol.
     El operador es el usuario que realiza la acción (para logging).
     """
     if username in USERS:
         raise ValueError(f"El usuario '{username}' ya existe.")
     if role not in ROLES:
         raise ValueError(f"Rol '{role}' no válido.")
+    # Si custom_permissions es None, usar permisos mínimos del rol
     perms = custom_permissions if custom_permissions is not None else get_permissions(role)
     USERS[username] = {
         "role": role,
