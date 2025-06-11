@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 from gui.connection_selector import ConnectionSelector
 from gui.adapter_verifier import AdapterVerifier
@@ -11,12 +15,14 @@ class MainWindow(QMainWindow):
         self.plugin_manager = PluginManager({})
         self.plugin_manager.register(VxlanPlugin())
         tabs = QTabWidget()
-        tabs.addTab(ConnectionSelector(self.plugin_manager), "Conexión")
+        tabs.addTab(ConnectionSelector(plugin_manager=self.plugin_manager), "Conexión")
         tabs.addTab(AdapterVerifier(), "Adaptadores")
         self.setCentralWidget(tabs)
 
 def main():
-    app = QApplication([])
+    app = QApplication.instance()
+    if app is None:
+        app = QApplication([])
     window = MainWindow()
     window.show()
     app.exec()

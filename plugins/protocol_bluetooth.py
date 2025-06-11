@@ -20,8 +20,8 @@ class BluetoothPlugin(BasePlugin):
             logger.warning("No permission to use Bluetooth.")
             return
         if bluetooth is None:
-            logger.error("[Bluetooth] pybluez no está instalado. Instálalo con: pip install pybluez")
-            print("Para usar Bluetooth necesitas instalar pybluez: pip install pybluez")
+            logger.error("[Bluetooth] pybluez-pypi no está instalado. Instálalo con: pip install pybluez-pypi")
+            print("Para usar Bluetooth necesitas instalar pybluez-pypi: pip install pybluez-pypi")
             return
         try:
             self.sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)

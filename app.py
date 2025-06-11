@@ -1,5 +1,4 @@
-from plugins.plugin_manager import PluginManager
-from plugins.directplay_plugin import DirectPlayPlugin
+from core.plugin_manager import CorePluginManager
 import psutil
 import uuid
 import random
@@ -7,11 +6,13 @@ from rich.console import Console
 from rich.table import Table
 
 app_context = {
-    # ...existing code...
+    "role": "admin",
+    "protocol": "none",
+    # Puedes agregar más parámetros globales aquí
 }
 
-plugin_manager = PluginManager(app_context)
-plugin_manager.register(DirectPlayPlugin())
+plugin_manager = CorePluginManager(app_context)
+plugin_manager.auto_register_plugins()
 
 console = Console()
 
@@ -115,7 +116,7 @@ def show_connection_header(info):
     console.print(table)
 
 def main():
-    # ...existing code...
+    # Inicialización de la app
     adapter = select_adapter_interactive()
     if adapter:
         info = get_connection_info(adapter)

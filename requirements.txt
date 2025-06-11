@@ -7,5 +7,6 @@ paramiko
 smbprotocol
 webdavclient3
 vncdotool
-pybluez
+pypi
 python-nmap
+psutil

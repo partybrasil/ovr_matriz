@@ -1,3 +1,6 @@
+import logging
+logger = logging.getLogger(__name__)
+
 def metodo(self, *args, **kwargs):
     # TODO: Implementar la lógica real de este protocolo
     # Placeholder: lógica a implementar para el protocolo XXX.
