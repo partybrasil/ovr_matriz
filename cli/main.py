@@ -12,22 +12,43 @@ def cli_plugin_manager(app_context):
         plugin_manager = CorePluginManager(app_context)
         plugin_manager.auto_register_plugins()
         app_context["plugin_manager"] = plugin_manager
-    print("Gestor de plugins CLI")
-    for info in plugin_manager.get_all_plugin_info():
-        print(f"- {info['name']} (Activo: {info['active']})")
-    # Comandos básicos de ejemplo
     while True:
-        cmd = input("Comando (activar <plugin>, desactivar <plugin>, salir): ")
-        if cmd.startswith("activar "):
-            name = cmd.split(" ", 1)[1]
-            plugin_manager.activate_plugin(name)
-            print(f"Plugin {name} activado.")
-        elif cmd.startswith("desactivar "):
-            name = cmd.split(" ", 1)[1]
-            plugin_manager.deactivate_plugin(name)
-            print(f"Plugin {name} desactivado.")
-        elif cmd == "salir":
+        print("\n=== Gestor de Plugins ===")
+        plugins = plugin_manager.get_all_plugin_info()
+        for idx, info in enumerate(plugins, 1):
+            estado = "Activo" if info["active"] else "Inactivo"
+            print(f"{idx}. {info['name']} [{estado}]")
+        print("a) Activar plugin")
+        print("d) Desactivar plugin")
+        print("r) Recargar plugins")
+        print("q) Volver")
+        cmd = input("Opción: ").strip().lower()
+        if cmd == "a":
+            sel = input("Nombre del plugin a activar: ")
+            plugin_manager.activate_plugin(sel)
+            print(f"Plugin {sel} activado.")
+        elif cmd == "d":
+            sel = input("Nombre del plugin a desactivar: ")
+            plugin_manager.deactivate_plugin(sel)
+            print(f"Plugin {sel} desactivado.")
+        elif cmd == "r":
+            plugin_manager.reload_plugins()
+            print("Plugins recargados.")
+        elif cmd == "q":
             break
+
+def cli_config_menu(app_context):
+    print("\n=== Menú de Configuración ===")
+    print("1. Configuración general")
+    print("2. Parámetros avanzados")
+    print("3. Preferencias de usuario")
+    print("4. Idioma")
+    print("5. Seguridad")
+    print("6. Volver")
+    opt = input("Seleccione una opción: ")
+    if opt == "6":
+        return
+    print("Funcionalidad de configuración aún no implementada (placeholder).")
 
 def crear_usuario_interactivo(operator="admin"):
     print("=== Crear nuevo usuario ===")
@@ -102,16 +123,16 @@ def main():
     plugin_manager = CorePluginManager(app_context)
     plugin_manager.auto_register_plugins()
     app_context["plugin_manager"] = plugin_manager
+    print("Bienvenido al Gestor de Conexiones CLI")
     while True:
-        mostrar_encabezado(app_context)
-        print("Bienvenido al Gestor de Conexiones CLI")
         print("\n1. Seleccionar tipo de conexión")
         print("2. Verificar adaptadores de red")
         print("3. Gestor de plugins")
-        print("4. Crear usuario nuevo")
-        print("5. Listar usuarios")
-        print("6. Eliminar usuario")
-        print("7. Salir")
+        print("4. Menú de configuración")
+        print("5. Crear usuario nuevo")
+        print("6. Listar usuarios")
+        print("7. Eliminar usuario")
+        print("8. Salir")
         opt = input("Opción: ")
         if opt == "1":
             select_connection_type()
@@ -120,12 +141,14 @@ def main():
         elif opt == "3":
             cli_plugin_manager(app_context)
         elif opt == "4":
-            crear_usuario_interactivo(operator=app_context.get("current_user", "admin"))
+            cli_config_menu(app_context)
         elif opt == "5":
-            print("Usuarios registrados:", ", ".join(list_users()))
+            crear_usuario_interactivo(operator=app_context.get("current_user", "admin"))
         elif opt == "6":
-            eliminar_usuario_interactivo(operator=app_context.get("current_user", "admin"))
+            print("Usuarios registrados:", ", ".join(list_users()))
         elif opt == "7":
+            eliminar_usuario_interactivo(operator=app_context.get("current_user", "admin"))
+        elif opt == "8":
             break
         else:
             print("Opción no válida.")

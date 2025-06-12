@@ -52,21 +52,27 @@ def eliminar_usuario_interactivo_gui(operator="admin"):
 
 # En la configuración de la GUI, añadir acceso directo:
 def settings_menu(app_context):
-    # Aquí se integraría un diálogo real de configuración en la GUI
-    print("Menú de configuración (placeholder GUI*)")
-    print("1. Configuración general*")
-    print("2. Parámetros avanzados*")
-    print("3. Gestor de plugins*")
-    print("4. Crear usuario nuevo")
-    print("5. Listar usuarios")
-    print("6. Eliminar usuario")
+    print("\n=== Menú de Configuración ===")
+    print("1. Configuración general")
+    print("2. Parámetros avanzados")
+    print("3. Preferencias de usuario")
+    print("4. Idioma")
+    print("5. Seguridad")
+    print("6. Gestor de plugins")
+    print("7. Crear usuario nuevo")
+    print("8. Listar usuarios")
+    print("9. Eliminar usuario")
+    print("0. Volver")
     choice = input("Seleccione una opción: ")
-    if choice == "3":
+    if choice == "6":
         open_plugin_manager_window(app_context)
-    elif choice == "4":
+    elif choice == "7":
         crear_usuario_interactivo_gui(operator=app_context.get("current_user", "admin"))
-    elif choice == "5":
-        from core.roles import list_users
+    elif choice == "8":
         print("Usuarios registrados:", ", ".join(list_users()))
-    elif choice == "6":
+    elif choice == "9":
         eliminar_usuario_interactivo_gui(operator=app_context.get("current_user", "admin"))
+    elif choice == "0":
+        return
+    else:
+        print("Funcionalidad de configuración aún no implementada (placeholder).")
