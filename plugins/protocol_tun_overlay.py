@@ -9,5 +9,5 @@ class TunOverlayPlugin(BasePlugin):
         self.app_context = app_context
 
     def create_overlay(self, name):
-        logger.info(f"[TUN Overlay] Placeholder: crear overlay TUN {name}.")
-        # Aquí deberías implementar la lógica real para overlays TUN.
+        logger.info(f"[TUN Overlay] Placeholder: crear overlay TUN {name}*.")
+        # Aquí deberías implementar la lógica real para overlays TUN.*

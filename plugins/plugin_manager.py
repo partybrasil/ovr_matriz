@@ -1,5 +1,5 @@
-# Obsoleto: Usar core/plugin_manager.py para la gestión centralizada de plugins.
-# Este archivo se mantiene solo para compatibilidad temporal.
+# Obsoleto: Usar core/plugin_manager.py para la gestión centralizada de plugins.*
+# Este archivo se mantiene solo para compatibilidad temporal.*
 
 from typing import List
 from .base_plugin import BasePlugin

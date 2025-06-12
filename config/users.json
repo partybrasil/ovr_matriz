@@ -35,5 +35,31 @@
       "receive_notifications",
       "connect_directplay"
     ]
+  },
+  "teste": {
+    "role": "admin",
+    "permissions": [
+      "transfer_files",
+      "view_status",
+      "edit_matrix",
+      "export_matrix",
+      "apply_filters",
+      "manage_users",
+      "view_history",
+      "undo_redo",
+      "integrate_external_data",
+      "configure_plugins",
+      "view_reports",
+      "generate_reports",
+      "receive_notifications",
+      "access_api",
+      "change_settings",
+      "multilanguage_support",
+      "connect_directplay",
+      "manage_roles",
+      "delete_data",
+      "import_matrix",
+      "view_logs"
+    ]
   }
 }

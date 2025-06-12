@@ -9,5 +9,5 @@ class TcpHolePunchPlugin(BasePlugin):
         self.app_context = app_context
 
     def punch(self, remote_ip, remote_port):
-        logger.info(f"[TCP HolePunch] Placeholder: realizar TCP hole punching a {remote_ip}:{remote_port}.")
-        # Aquí deberías implementar la lógica real para TCP hole punching.
+        logger.info(f"[TCP HolePunch] Placeholder: realizar TCP hole punching a {remote_ip}:{remote_port}*.")
+        # Aquí deberías implementar la lógica real para TCP hole punching.*

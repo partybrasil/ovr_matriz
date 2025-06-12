@@ -2,6 +2,9 @@ from core.plugin_manager import CorePluginManager
 from cli.connection_selector import select_connection_type
 from cli.adapter_verifier import verify_adapters
 from core.roles import create_user, ALL_PERMISSIONS, list_users, delete_user, ROLES
+from core.state_header import StateHeader
+from rich.console import Console
+from rich.table import Table
 
 def cli_plugin_manager(app_context):
     plugin_manager = app_context.get("plugin_manager")
@@ -68,6 +71,20 @@ def eliminar_usuario_interactivo(operator="admin"):
     except Exception as e:
         print(f"Error: {e}")
 
+def mostrar_encabezado(app_context):
+    header = StateHeader(app_context).get_status()
+    table = Table(show_header=False, box=None)
+    table.add_row(f"[bold]YO:[/bold] {header['yo']}")
+    table.add_row(f"[bold]RED:[/bold] {header['red']}")
+    table.add_row(f"[bold]PROTOCOLO:[/bold] {header['protocolo']}")
+    table.add_row(f"[bold]ESTADO:[/bold] {header['estado']}")
+    table.add_row(f"[bold]DESTINO:[/bold] {header['destino']}")
+    table.add_row(f"[bold]RED DESTINO:[/bold] {header['red_destino']}")
+    console = Console()
+    console.clear()
+    console.print(table)
+    print("-" * 60)
+
 def main_menu(app_context):
     print("1. Ejecutar matriz")
     print("2. Configuración")
@@ -85,8 +102,9 @@ def main():
     plugin_manager = CorePluginManager(app_context)
     plugin_manager.auto_register_plugins()
     app_context["plugin_manager"] = plugin_manager
-    print("Bienvenido al Gestor de Conexiones CLI")
     while True:
+        mostrar_encabezado(app_context)
+        print("Bienvenido al Gestor de Conexiones CLI")
         print("\n1. Seleccionar tipo de conexión")
         print("2. Verificar adaptadores de red")
         print("3. Gestor de plugins")
